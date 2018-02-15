@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PhotosDemo</string>
+    <string name="title_activity_auth">AuthActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="log_in">log in</string>
+    <string name="e_mail">e - mail</string>
 </resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.arkhipenkapiotr.demo.photosdemo.ui.fragment.LoginFragment">
+
+    <EditText
+        android:id="@+id/fragment_register_password_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:hint="@string/password"/>
+
+    <EditText
+        android:id="@+id/fragment_register_second_password_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_register_password_edit_text"
+        android:layout_centerHorizontal="true"
+        android:hint="Repeat password"/>
+
+    <EditText
+        android:id="@+id/fragment_register_login_edit_text"
+        android:inputType="textEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fragment_register_password_edit_text"
+        android:hint="@string/e_mail"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/fragment_register_enter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_register_second_password_edit_text"
+        android:layout_centerHorizontal="true"
+
+        android:text="@string/log_in"/>
+
+    <ProgressBar
+        android:id="@+id/fragment_register_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/fragment_register_error_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_register_enter_button"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        tools:text="Error text"/>
+
+
+
+
+</RelativeLayout>

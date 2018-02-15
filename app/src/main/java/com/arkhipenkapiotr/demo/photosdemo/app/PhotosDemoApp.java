@@ -19,11 +19,12 @@ public class PhotosDemoApp extends Application {
         super.onCreate();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.180.4:8080/")
+                .baseUrl("http://junior.balinasoft.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         photosApi = retrofit.create(PhotosApi.class);
+        System.out.println(photosApi.toString());
     }
 
     public static PhotosApi getApi(){

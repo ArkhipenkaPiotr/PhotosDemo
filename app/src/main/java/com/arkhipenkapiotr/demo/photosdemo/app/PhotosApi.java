@@ -1,7 +1,7 @@
 package com.arkhipenkapiotr.demo.photosdemo.app;
 
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.SignRequestBody;
-import com.arkhipenkapiotr.demo.photosdemo.app.api_models.SignResponseBody;
+import com.arkhipenkapiotr.demo.photosdemo.app.api_models.UserDTO;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -14,8 +14,8 @@ import retrofit2.http.POST;
 public interface PhotosApi {
 
     @POST("/api/account/signin")
-    Call<SignResponseBody> signIn (@Body SignRequestBody signRequest);
+    Call<UserDTO> signIn (@Body SignRequestBody signRequest);
 
     @POST("/api/account/signup")
-    Call<SignResponseBody> signUp (@Body SignRequestBody signRequest);
+    Call<UserDTO> signUp (@Body SignRequestBody signRequest);
 }

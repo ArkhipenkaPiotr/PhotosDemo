@@ -4,12 +4,18 @@ package com.arkhipenkapiotr.demo.photosdemo.app.api_models;
  * Created by arhip on 15.02.2018.
  */
 
-public class SignResponseBody {
+public class UserDTO {
     private String login;
     private String token;
     private Long userId;
 
-    public SignResponseBody() {
+    public UserDTO() {
+    }
+
+    public UserDTO(String login, String token, Long userId) {
+        this.login = login;
+        this.token = token;
+        this.userId = userId;
     }
 
     public String getLogin() {
