@@ -20,6 +20,7 @@ import com.arkhipenkapiotr.demo.photosdemo.mvc.views.LoginView;
 
 import java.util.zip.Inflater;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -49,6 +50,20 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
 
     @InjectPresenter
     LoginPresenter loginPresenter;
+
+    @BindString(R.string.validation_error)
+    String validationError;
+
+    @BindString(R.string.server_error)
+    String serverError;
+
+    @BindString(R.string.unknown_error)
+    String unknownError;
+
+    @BindString(R.string.bad_credentials)
+    String badCredentials;
+
+
 
     private Unbinder unbinder;
 
@@ -85,7 +100,7 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
 
     @Override
     public void showValidationError() {
-        errorTextView.setText("Validation error!");
+        errorTextView.setText(validationError);
         errorTextView.setVisibility(View.VISIBLE);
     }
 
@@ -96,19 +111,19 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
 
     @Override
     public void showServerConnectionError() {
-        errorTextView.setText("Server error! Please, try later");
+        errorTextView.setText(serverError);
         errorTextView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void showUnknowError() {
-        errorTextView.setText("Unknown error!");
+        errorTextView.setText(unknownError);
         errorTextView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void showBadCredentialsError() {
-        errorTextView.setText("Bad credentials!");
+        errorTextView.setText(badCredentials);
         errorTextView.setVisibility(View.VISIBLE);
     }
 

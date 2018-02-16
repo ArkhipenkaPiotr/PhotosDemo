@@ -40,11 +40,16 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
                 @Override
                 public void onResponse(Call<UserDTO> call, Response<UserDTO> response) {
                     getViewState().finishAuthorization();
-                    if (response.body()!=null){
+                    if (response.code()==200){
                         getViewState().onSuccessAuthorization();
                     }
                     else{
-                        getViewState().showBadCredentialsError();
+                        if (response.code()==400){
+                            getViewState().showBadCredentialsError();
+                        }
+                        else {
+                            getViewState().showUnknowError();
+                        }
                     }
                 }
 
