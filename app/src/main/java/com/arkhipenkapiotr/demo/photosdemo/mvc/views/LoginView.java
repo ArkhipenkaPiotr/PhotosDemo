@@ -12,6 +12,7 @@ public interface LoginView extends MvpView {
     void showValidationError();
     void hideError();
     void showServerConnectionError();
+    void showUnknowError();
     void showBadCredentialsError();
     void onSuccessAuthorization();
 }

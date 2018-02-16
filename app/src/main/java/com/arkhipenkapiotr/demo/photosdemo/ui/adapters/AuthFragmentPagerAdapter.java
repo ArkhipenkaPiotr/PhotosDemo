@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.arkhipenkapiotr.demo.photosdemo.ui.fragment.LoginFragment;
+import com.arkhipenkapiotr.demo.photosdemo.ui.fragment.RegisterFragment;
 
 /**
  * Created by arhip on 15.02.2018.
@@ -23,7 +24,7 @@ public class AuthFragmentPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new LoginFragment();
             case 1:
-                return new LoginFragment();
+                return new RegisterFragment();
         }
         return null;
     }

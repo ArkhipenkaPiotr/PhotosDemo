@@ -58,20 +58,11 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
         View v = inflater.inflate(R.layout.fragment_login, container, false);
         ButterKnife.bind(this,v);
 
-//        enterButton = v.findViewById(R.id.fragment_login_enter_button);
-//
-//        enterButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                loginPresenter.logIn(loginEditText.getText().toString(), passwordEditText.getText().toString());
-//            }
-//        });
-
         return v;
     }
 
     @OnClick(R.id.fragment_login_enter_button)
-    public void enter(View v){
+    public void enter(){
         loginPresenter.logIn(loginEditText.getText().toString(), passwordEditText.getText().toString());
     }
 
@@ -106,6 +97,12 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
     @Override
     public void showServerConnectionError() {
         errorTextView.setText("Server error! Please, try later");
+        errorTextView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showUnknowError() {
+        errorTextView.setText("Unknown error!");
         errorTextView.setVisibility(View.VISIBLE);
     }
 

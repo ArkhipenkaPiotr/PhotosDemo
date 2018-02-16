@@ -8,4 +8,10 @@
     <string name="login">login</string>
     <string name="log_in">log in</string>
     <string name="e_mail">e - mail</string>
+    <string name="validation_error">Validation error</string>
+    <string name="server_error">Server error! Please, try later</string>
+    <string name="succesful_registration">Registration was cancelled succesfully</string>
+    <string name="password_dublicate_error">Passwords must match</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="login_already_used">Login already used</string>
 </resources>

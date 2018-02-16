@@ -16,6 +16,7 @@
 
     <EditText
         android:id="@+id/fragment_register_second_password_edit_text"
+        android:inputType="textPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/fragment_register_password_edit_text"
