@@ -1,7 +1,7 @@
-package com.arkhipenkapiotr.demo.photosdemo.mvc.presenters;
+package com.arkhipenkapiotr.demo.photosdemo.mvp.presenters;
 
 import com.arellomobile.mvp.MvpPresenter;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.views.MainView;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.views.MainView;
 
 /**
  * Created by arhip on 15.02.2018.

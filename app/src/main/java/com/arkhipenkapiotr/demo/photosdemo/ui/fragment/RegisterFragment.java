@@ -14,8 +14,10 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arkhipenkapiotr.demo.photosdemo.R;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.presenters.RegisterPresenter;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.views.RegisterView;
+import com.arkhipenkapiotr.demo.photosdemo.app.api_models.UserDTO;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.presenters.RegisterPresenter;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.views.RegisterView;
+import com.arkhipenkapiotr.demo.photosdemo.util.PreferencesUtil;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -131,8 +133,9 @@ public class RegisterFragment extends MvpAppCompatFragment implements RegisterVi
     }
 
     @Override
-    public void onSuccessRegistration() {
+    public void onSuccessRegistration(UserDTO userDTO) {
         Toast.makeText(getContext(), succesfulRegistration, Toast.LENGTH_SHORT).show();
+        PreferencesUtil.putUserDTO(getActivity(), userDTO);
     }
 
     @Override

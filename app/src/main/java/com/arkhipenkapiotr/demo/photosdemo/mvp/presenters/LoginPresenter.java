@@ -1,14 +1,13 @@
-package com.arkhipenkapiotr.demo.photosdemo.mvc.presenters;
+package com.arkhipenkapiotr.demo.photosdemo.mvp.presenters;
 
 import android.util.Patterns;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.arkhipenkapiotr.demo.photosdemo.app.PhotosApi;
 import com.arkhipenkapiotr.demo.photosdemo.app.PhotosDemoApp;
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.SignRequestBody;
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.UserDTO;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.views.LoginView;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.views.LoginView;
 
 import java.net.InetAddress;
 import java.util.regex.Pattern;
@@ -41,7 +40,7 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
                 public void onResponse(Call<UserDTO> call, Response<UserDTO> response) {
                     getViewState().finishAuthorization();
                     if (response.code()==200){
-                        getViewState().onSuccessAuthorization();
+                        getViewState().onSuccessAuthorization(response.body());
                     }
                     else{
                         if (response.code()==400){

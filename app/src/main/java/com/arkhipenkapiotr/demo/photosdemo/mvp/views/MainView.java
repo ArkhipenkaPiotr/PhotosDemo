@@ -1,4 +1,4 @@
-package com.arkhipenkapiotr.demo.photosdemo.mvc.views;
+package com.arkhipenkapiotr.demo.photosdemo.mvp.views;
 
 import com.arellomobile.mvp.MvpView;
 

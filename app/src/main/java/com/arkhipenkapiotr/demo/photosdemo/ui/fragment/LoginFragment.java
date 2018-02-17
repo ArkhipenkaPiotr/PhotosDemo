@@ -15,8 +15,10 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arkhipenkapiotr.demo.photosdemo.R;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.presenters.LoginPresenter;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.views.LoginView;
+import com.arkhipenkapiotr.demo.photosdemo.app.api_models.UserDTO;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.presenters.LoginPresenter;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.views.LoginView;
+import com.arkhipenkapiotr.demo.photosdemo.util.PreferencesUtil;
 
 import java.util.zip.Inflater;
 
@@ -24,7 +26,6 @@ import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnItemClick;
 import butterknife.Unbinder;
 
 /**
@@ -128,7 +129,8 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView {
     }
 
     @Override
-    public void onSuccessAuthorization() {
+    public void onSuccessAuthorization(UserDTO userDTO) {
         Toast.makeText(getContext(), "Welcome!", Toast.LENGTH_SHORT).show();
+        PreferencesUtil.putUserDTO(getActivity(), userDTO);
     }
 }

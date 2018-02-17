@@ -1,4 +1,4 @@
-package com.arkhipenkapiotr.demo.photosdemo.mvc.presenters;
+package com.arkhipenkapiotr.demo.photosdemo.mvp.presenters;
 
 import android.util.Patterns;
 
@@ -6,7 +6,7 @@ import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.arkhipenkapiotr.demo.photosdemo.app.PhotosDemoApp;
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.UserDTO;
-import com.arkhipenkapiotr.demo.photosdemo.mvc.views.RegisterView;
+import com.arkhipenkapiotr.demo.photosdemo.mvp.views.RegisterView;
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.SignRequestBody;
 
 import retrofit2.Call;
@@ -41,7 +41,7 @@ public class RegisterPresenter extends MvpPresenter<RegisterView> {
                 public void onResponse(Call<UserDTO> call, Response<UserDTO> response) {
                     getViewState().finishRegistration();
                     if (response.code()==200){
-                        getViewState().onSuccessRegistration();
+                        getViewState().onSuccessRegistration(response.body());
                     }
                     else{
                         if (response.code()==400){
