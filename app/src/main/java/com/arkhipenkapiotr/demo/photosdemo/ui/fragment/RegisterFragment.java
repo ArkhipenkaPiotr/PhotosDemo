@@ -23,6 +23,7 @@ import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Created by arhip on 16.02.2018.
@@ -69,13 +70,21 @@ public class RegisterFragment extends MvpAppCompatFragment implements RegisterVi
     @BindString(R.string.login_already_used)
     String loginAlreadyUsed;
 
+    Unbinder unbinder;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_register, container, false);
-        ButterKnife.bind(this, v);
+        unbinder = ButterKnife.bind(this, v);
 
         return v;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     @OnClick(R.id.fragment_register_enter_button)

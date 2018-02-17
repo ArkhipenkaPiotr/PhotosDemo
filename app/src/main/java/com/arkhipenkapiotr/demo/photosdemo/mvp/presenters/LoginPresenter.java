@@ -8,6 +8,7 @@ import com.arkhipenkapiotr.demo.photosdemo.app.PhotosDemoApp;
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.SignRequestBody;
 import com.arkhipenkapiotr.demo.photosdemo.app.api_models.UserDTO;
 import com.arkhipenkapiotr.demo.photosdemo.mvp.views.LoginView;
+import com.arkhipenkapiotr.demo.photosdemo.util.PreferencesUtil;
 
 import java.net.InetAddress;
 import java.util.regex.Pattern;
