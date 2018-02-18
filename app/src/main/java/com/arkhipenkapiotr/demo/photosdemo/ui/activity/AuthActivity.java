@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,16 +24,19 @@ public class AuthActivity extends AppCompatActivity {
     @BindView(R.id.auth_fragment_container)
     ViewPager viewPager;
 
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         ButterKnife.bind(this);
 
-        AuthFragmentPagerAdapter pagerAdapter = new AuthFragmentPagerAdapter(getSupportFragmentManager());
+//        setSupportActionBar(toolbar);
+
+        FragmentPagerAdapter pagerAdapter = new AuthFragmentPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager, true);
     }
